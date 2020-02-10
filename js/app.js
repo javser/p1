@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", showCoffees);
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
     navigator.serviceWorker
-      .register("sw0.js")
+      .register("/sw0.js")
       .then(res => alert("service worker registered"))
       .catch(err => alert("service worker not registered", err))
   })
