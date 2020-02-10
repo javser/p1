@@ -4,7 +4,6 @@ const assets = [
   "/index.html",
   "/css/style.css",
   "/js/app.js",
-  "https://media.giphy.com/media/3o6ZtlGkjeschymLNm/source.gif"
 ]
 
 self.addEventListener("install", installEvent => {
