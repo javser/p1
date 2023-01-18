@@ -22,7 +22,7 @@
   <body>
     <main>
       <nav>
-        <h1>Dev'C-4</h1>
+        <h1>Dev'C-5</h1>
         <ul>
           <li>Home</li>
           <li>About</li>
@@ -34,15 +34,30 @@
     <script src="js/app.js"></script>
     <script>
       const al = (node) => document.body.append(node + ' . . | . . ');
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
+
+      window.addEventListener('load', function () {
+        if ('serviceWorker' in navigator) {
           navigator.serviceWorker
-            .register('./sw.js')
+            .register('/sw.js')
             .then((res) => al('service worker registered'))
             .catch((err) => al(err));
-        });
-        al('loaded');
-      }
+
+          // Initialize deferredPrompt for use later to show browser install prompt.
+          let deferredPrompt;
+
+          window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault();
+            // Stash the event so it can be triggered later.
+            deferredPrompt = e;
+            // Update UI notify the user they can install the PWA
+            showInstallPromotion();
+            // Optionally, send analytics event that PWA install promo was shown.
+            console.log(`'beforeinstallprompt' event was fired.`);
+          });
+          al('loaded');
+        }
+      });
     </script>
   </body>
 </html>
