@@ -38,7 +38,7 @@
       window.addEventListener('load', function () {
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker
-            .register('/sw.js')
+            .register('sw.js')
             .then((res) => al('service worker registered'))
             .catch((err) => al(err));
 
