@@ -1,9 +1,12 @@
-const container = document.querySelector(".container")
+const container = document.querySelector('.container');
 const coffees = [
-  { name: "Perspiciatis", image: "https://media.giphy.com/media/3o6ZtlGkjeschymLNm/source.gif" },
-]
+  {
+    name: 'Perspiciatis',
+    image: 'https://media.giphy.com/media/3o6ZtlGkjeschymLNm/source.gif',
+  },
+];
 const showCoffees = () => {
-  let output = ""
+  let output = '';
   coffees.forEach(
     ({ name, image }) =>
       (output += `
@@ -13,17 +16,17 @@ const showCoffees = () => {
                 <a class="card--link" href="#">Taste</a>
               </div>
               `)
-  )
-  container.innerHTML = output
-}
+  );
+  container.innerHTML = output;
+};
 
-document.addEventListener("DOMContentLoaded", showCoffees);
+document.addEventListener('DOMContentLoaded', showCoffees);
 
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
     navigator.serviceWorker
-      .register("/sw0.js")
-      .then(res => alert("service worker registered"))
-      .catch(err => alert("service worker not registered", err))
-  })
+      .register('/sw0.js')
+      .then((res) => alert('service worker registered'))
+      .catch((err) => alert(err));
+  });
 }
