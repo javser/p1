@@ -22,11 +22,11 @@
   <body>
     <main>
       <nav>
-        <h1>Dev'C-6</h1>
+        <h1>Dev'C-7</h1>
         <ul>
           <li>Home</li>
           <li>About</li>
-          <li><button id="bi" value="install">install</button></li>
+          <li><button id="bi">install</button></li>
         </ul>
       </nav>
       <div class="container"></div>
@@ -36,6 +36,7 @@
       const al = (node) => document.body.append(node + ' . . | . . ');
 
       window.addEventListener('load', function () {
+        bi.onclick = () => al('click');
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker
             .register('sw.js')
@@ -55,6 +56,7 @@
             // Optionally, send analytics event that PWA install promo was shown.
             al(`'beforeinstallprompt' event was fired.`);
           });
+
           bi.addEventListener('click', async () => {
             // Hide the app provided install promotion
             hideInstallPromotion();
@@ -67,6 +69,7 @@
             // We've used the prompt, and can't use it again, throw it away
             deferredPrompt = null;
           });
+
           window.addEventListener('appinstalled', () => {
             // Hide the app-provided install promotion
             hideInstallPromotion();
@@ -75,6 +78,7 @@
             // Optionally, send analytics event to indicate successful install
             al('PWA was installed');
           });
+
           al('loaded');
         }
       });
