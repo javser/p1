@@ -22,11 +22,11 @@
   <body>
     <main>
       <nav>
-        <h1>Dev'C-5</h1>
+        <h1>Dev'C-6</h1>
         <ul>
           <li>Home</li>
           <li>About</li>
-          <li>Blog</li>
+          <li><button id="bi" value="install">install</button></li>
         </ul>
       </nav>
       <div class="container"></div>
@@ -55,7 +55,7 @@
             // Optionally, send analytics event that PWA install promo was shown.
             al(`'beforeinstallprompt' event was fired.`);
           });
-          buttonInstall.addEventListener('click', async () => {
+          bi.addEventListener('click', async () => {
             // Hide the app provided install promotion
             hideInstallPromotion();
             // Show the install prompt
