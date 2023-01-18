@@ -22,7 +22,7 @@
   <body>
     <main>
       <nav>
-        <h1>Dev'C-1</h1>
+        <h1>Dev'C-3</h1>
         <ul>
           <li>Home</li>
           <li>About</li>
@@ -31,6 +31,16 @@
       </nav>
       <div class="container"></div>
     </main>
-    <script type="application/javascript" src="js/app.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker
+            .register('sw.js')
+            .then((res) => alert('service worker registered'))
+            .catch((err) => alert(err));
+        });
+      }
+    </script>
   </body>
 </html>
