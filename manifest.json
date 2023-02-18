@@ -1,7 +1,7 @@
 {
   "name": "Dev'C",
   "short_name": "DevC",
-  "start_url": "/offline.html",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#fdfdfd",
   "theme_color": "#db4938",
