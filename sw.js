@@ -2,7 +2,7 @@ const CACHE_NAME = 'offline';
 const OFFLINE_URL = 'offline.html';
 
 self.addEventListener('install', function (event) {
-  al('[ServiceWorker] Install');
+  self.console.log('[ServiceWorker] Install');
 
   event.waitUntil(
     (async () => {
@@ -17,7 +17,7 @@ self.addEventListener('install', function (event) {
 });
 
 self.addEventListener('activate', (event) => {
-  al('[ServiceWorker] Activate');
+  self.console.log('[ServiceWorker] Activate');
   event.waitUntil(
     (async () => {
       // Enable navigation preload if it's supported.
@@ -46,7 +46,7 @@ self.addEventListener('fetch', function (event) {
           const networkResponse = await fetch(event.request);
           return networkResponse;
         } catch (error) {
-          al(
+          self.console.log(
             '[Service Worker] Fetch failed; returning offline page instead.',
             error
           );
