@@ -73,8 +73,7 @@
             .register('sw.js')
             .then((res) =>
               al(
-                'ServiceWorker registration successful with scope: ',
-                res.scope
+                'ServiceWorker registration successful with scope: ' + res.scope
               )
             )
             .catch((err) => al(err));
