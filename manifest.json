@@ -1,7 +1,7 @@
 {
   "name": "Dev'C",
   "short_name": "DevC",
-  "start_url": "/",
+  "start_url": "https://javser.github.io/p1/",
   "display": "standalone",
   "background_color": "#fdfdfd",
   "theme_color": "#db4938",
@@ -11,6 +11,11 @@
       "src": "https://via.placeholder.com/72x72.png",
       "type": "image/png",
       "sizes": "72x72"
+    },
+    {
+      "src": "https://via.placeholder.com/512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ]
 }
